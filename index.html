@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cameroun Drinks - Boissons Authentiques</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- en-tête -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <i class="fas fa-cocktail"></i>
+                    <span>Cameroun Drinks</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Accueil</a></li>
+                    <li><a href="#products" class="nav-link">Produits</a></li>
+                    <li><a href="#about" class="nav-link">À propos</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#" class="nav-link cart-link"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- section d'accueil -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Cameroun Drinks</h1>
+            <p>Découvrez l'authenticité des saveurs camerounaises</p>
+            <p class="hero-subtitle">Jus naturels • Bières locales • Livraison rapide</p>
+            <button class="cta-button" onclick="scrollToProducts()">
+                <i class="fas fa-glass-cheers"></i>
+                Découvrir nos boissons
+            </button>
+        </div>
+        <div class="hero-image">
+            <img src="image/image1.jpeg" alt="Boissons Camerounaises"> </div>
+    </section>
+
+    <!-- section des produits -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h2 class="section-title">Nos Produits</h2>
+            
+            <!-- categories  -->
+            <div class="category-tabs">
+                <button class="tab-button active" onclick="switchCategory('jus')">
+                    <i class="fas fa-apple-alt"></i>
+                    Jus Naturels
+                </button>
+                <button class="tab-button" onclick="switchCategory('biere')">
+                    <i class="fas fa-beer"></i>
+                    Bières Locales
+                </button>
+            </div>
+
+            <!-- categorie de jus -->
+            <div id="jus" class="category-content active">
+                <div class="products-grid">
+                    <div class="product-card" data-product="top-pamplemousse">
+                        <div class="product-image"><img src="image/IM8.jpeg" alt="Top Pamplemousse">
+                            <div class="product-badge">Populaire</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Top Pamplemousse</h3>
+                            <p>Jus de pamplemousse 100% naturel</p>
+                            <div class="product-price">500 FCFA</div>
+                            <div class="product-sizes">
+                                <span class="size-option active" data-size="33cl" data-price="250">33cl</span>
+                                <span class="size-option" data-size="50cl" data-price="750">50cl</span>
+                                <span class="size-option" data-size="1L" data-price="1500">1L</span>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('top-pamplemousse')">
+                                <i class="fas fa-cart-plus"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product="top-grenadine">
+                        <div class="product-image"><img src="image/top grenadine.jpg" alt="Top Grenadine">
+                            <div class="product-badge new">Nouveau</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Top Grenadine</h3>
+                            <p>Sirop de grenadine premium</p>
+                            <div class="product-price">500 FCFA</div>
+                            <div class="product-sizes">
+                                <span class="size-option active" data-size="33cl" data-price="500">33cl</span>
+                                <span class="size-option" data-size="50cl" data-price="750">50cl</span>
+                                <span class="size-option" data-size="1L" data-price="1000">1L</span>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('top-grenadine')">
+                                <i class="fas fa-cart-plus"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card" data-product="top-ananas">
+                        <div class="product-image">
+                            <img src="image/top ananas.jpeg" alt="Top Ananas">
+                        </div>
+                        <div class="product-info">
+                            <h3>Top Ananas</h3>
+                            <p>Jus d'ananas tropical frais</p>
+                            <div class="product-price">500 FCFA</div>
+                            <div class="product-sizes">
+                                <span class="size-option active" data-size="33cl" data-price="500">33cl</span>
+                                <span class="size-option" data-size="50cl" data-price="750">50cl</span>
+                                <span class="size-option" data-size="1L" data-price="1000">1L</span>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('top-ananas')">
+                                <i class="fas fa-cart-plus"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" data-product="djino">
+                        <div class="product-image">
+                            <img src="image/djino.jpeg" alt="Djino">
+                            <div class="product-badge bio">Bio</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Djino</h3>
+                            <p>Boisson au gingembre pétillante</p>
+                            <div class="product-price">750 FCFA</div>
+                            <div class="product-sizes">
+                                <span class="size-option active" data-size="25cl" data-price="750">25cl</span>
+                                <span class="size-option" data-size="50cl" data-price="1200">50cl</span>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('djino')">
+                                <i class="fas fa-cart-plus"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card" data-product="planete-cocktail">
+                        <div class="product-image">
+                            <img src="image/planete cocktail.jpeg" alt="Planète Cocktail">
+                            <div class="product-badge premium">Premium</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Planète Cocktail</h3>
+                            <p>Mélange de fruits de saisons </p>
+                            <div class="product-price">500 FCFA</div>
+                            <div class="product-sizes">
+                                <span class="size-option active" data-size="33cl" data-price="500">33cl</span>
+                                <span class="size-option" data-size="50cl" data-price="750">50cl</span>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('planete-cocktail')">
+                                <i class="fas fa-cart-plus"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card" data-product="vimpto">
+                        <div class="product-image">
+                            <img src="image/vimpto.jpeg" alt="Vimpto">
+                            <div class="product-badge tradition">Tradition</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Vimpto</h3>
+                            <p>Boisson à l'hibiscus traditionnelle</p>
+                            <div class="product-price">600 FCFA</div>
+                            <div class="product-sizes">
+                                <span class="size-option active" data-size="25cl" data-price="600">25cl</span>
+                                <span class="size-option" data-size="50cl" data-price="1200">50cl</span>
+                                <span class="size-option" data-size="1L" data-price="2400">1L</span>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('bissap')">
+                                <i class="fas fa-cart-plus"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Catégorie Bière -->
+            <div id="biere" class="category-content">
+                <div class="products-grid">
+                    <div class="product-card" data-product="kadji-beer">
+                        <div class="product-image">
+                            <img src="image/kadji.jpeg" alt="Kadji Beer">
+                            <div class="product-badge local">Local</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Kadji Beer</h3>
+                            <p>Bière blonde camerounaise</p>
+                            <div class="product-price">800 FCFA</div>
+                            <div class="product-sizes">
+                                <span class="size-option active" data-size="33cl" data-price="800">33cl</span>
+                                <span class="size-option" data-size="50cl" data-price="1200">50cl</span>
+                                <span class="size-option" data-size="65cl" data-price="1500">65cl</span>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('kadji-beer')">
+                                <i class="fas fa-cart-plus"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card" data-product="33-export">
+                        <div class="product-image">
+                            <img src="image/33 export.jpeg" alt="33 Export">
+                            <div class="product-badge premium">Premium</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>33 Export</h3>
+                            <p>Bière premium d'exportation</p>
+                            <div class="product-price">1,000 FCFA</div>
+                            <div class="product-sizes">
+                                <span class="size-option active" data-size="33cl" data-price="1000">33cl</span>
+                                <span class="size-option" data-size="50cl" data-price="1500">50cl</span>
+                                <span class="size-option" data-size="65cl" data-price="1800">65cl</span>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('33-export')">
+                                <i class="fas fa-cart-plus"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-card" data-product="booster-cola">
+                        <div class="product-image">
+                            <img src="image/booster cola.jpeg" alt="Booster Cola">
+                            <div class="product-badge energy">Energy</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Booster Cola</h3>
+                            <p>Bière énergisante rafraîchissante</p>
+                            <div class="product-price">1,200 FCFA</div>
+                            <div class="product-sizes">
+                                <span class="size-option active" data-size="33cl" data-price="1200">33cl</span>
+                                <span class="size-option" data-size="50cl" data-price="1800">50cl</span>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('booster-ice')">
+                                <i class="fas fa-cart-plus"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product="dopel">
+                        <div class="product-image">
+                            <img src="image/dopel.jpeg" alt="Dopel">
+                            <div class="product-badge strong">Strong</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Dopel</h3>
+                            <p>Bière forte double malt</p>
+                            <div class="product-price">1,500 FCFA</div>
+                            <div class="product-sizes">
+                                <span class="size-option active" data-size="33cl" data-price="1500">33cl</span>
+                                <span class="size-option" data-size="50cl" data-price="2200">50cl</span>
+                                <span class="size-option" data-size="65cl" data-price="2800">65cl</span>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('dopel')">
+                                <i class="fas fa-cart-plus"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+                        <div class="product-card" data-product="castel">
+                        <div class="product-image">
+                            <img src="image/castel.jpg" alt="Castel">
+                            <div class="product-badge classic">Classique</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Castel</h3>
+                            <p>Bière blonde légère</p>
+                            <div class="product-price">900 FCFA</div>
+                            <div class="product-sizes">
+                                <span class="size-option active" data-size="33cl" data-price="900">33cl</span>
+                                <span class="size-option" data-size="50cl" data-price="1300">50cl</span>
+                                <span class="size-option" data-size="65cl" data-price="1600">65cl</span>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('castel')">
+                                <i class="fas fa-cart-plus"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card" data-product="mutzig">
+                        <div class="product-image">
+                            <img src="image/mutzig.jpeg" alt="Mutzig">
+                            <div class="product-badge authentic">Authentique</div>
+                        </div>
+                        <div class="product-info">
+                            <h3>Mutzig</h3>
+                            <p>Bière alsacienne au Cameroun</p>
+                            <div class="product-price">1,100 FCFA</div>
+                            <div class="product-sizes">
+                                <span class="size-option active" data-size="33cl" data-price="1100">33cl</span>
+                                <span class="size-option" data-size="50cl" data-price="1600">50cl</span>
+                                <span class="size-option" data-size="65cl" data-price="2000">65cl</span>
+                            </div>
+                            <button class="add-to-cart-btn" onclick="addToCart('mutzig')">
+                                <i class="fas fa-cart-plus"></i>
+                                Ajouter au panier
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- A propos de la section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>À propos de Cameroun Drinks</h2>
+                    <p>Depuis plus de 10 ans, nous sommes spécialisés dans la distribution de boissons authentiques du Cameroun. Notre passion est de faire découvrir la richesse gustative de notre terroir à travers une sélection rigoureuse de produits de qualité.</p>
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <span>100% Naturel</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shipping-fast"></i>
+                            <span>Livraison Rapide</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <span>Qualité Premium</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-headset"></i>
+                            <span>Support 24/7</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="image/les-bieres-camerounaises.jpg" alt="Notre équipe">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section de contact -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contactez-nous</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Adresse</h3>
+                            <p>Douala, Cameroun</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Téléphone</h3>
+                            <p>+237 693573815</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>mathiewnzeudam925@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-buttons">
+                    <a href="https://wa.me/237693573815" class="contact-btn whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                    <a href="tel:+237693573815" class="contact-btn phone">
+                        <i class="fas fa-phone"></i>
+                        Appeler
+                    </a>
+                    <a href="mailto:mathiewnzeudam925@gmail.com" class="contact-btn email">
+                        <i class="fas fa-envelope"></i>
+                        Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fenêtre de panier -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-shopping-cart"></i> Mon Panier</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="cart-items">
+                <!-- Les articles du panier seront générés par JavaScript -->
+            </div>
+            <div class="cart-total">
+                <div class="total-amount">
+                    Total: <span id="totalAmount">0 FCFA</span>
+                </div>
+                <button class="checkout-btn" onclick="proceedToCheckout()">
+                    <i class="fas fa-credit-card"></i>
+                    Procéder au paiement
+                </button>
+            </div>
+        </div>
+    </div> <!-- mode de paiement -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-credit-card"></i> Paiement</h2>
+                <span class="close">&times;</span>
+            </div>
+            <div class="checkout-content">
+                <div class="payment-methods">
+                    <h3>Choisissez votre méthode de paiement</h3>
+                    <div class="payment-options">
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="card" checked>
+                            <div class="option-content">
+                                <i class="fas fa-credit-card"></i>
+                                <span>Carte Bancaire</span>
+                            </div>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="orange">
+                            <div class="option-content">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Orange Money</span>
+                            </div>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="payment" value="mtn">
+                            <div class="option-content">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Mobile Money</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="payment-form">
+                    <!-- Formulaire de paiement par carte -->
+                    <div id="cardForm" class="payment-form-section active">
+                        <h4>Informations de la carte</h4>
+                        <div class="form-group">
+                            <label>Numéro de carte</label>
+                            <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Date d'expiration</label>
+                                <input type="text" id="cardExpiry" placeholder="MM/AA" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label>CVV</label>
+                                <input type="text" id="cardCvv" placeholder="123" maxlength="4">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Nom sur la carte</label>
+                            <input type="text" id="cardName" placeholder="JEAN DUPONT">
+                        </div>
+                    </div>
+                    <!-- paiement mobile -->
+                    <div id="mobileForm" class="payment-form-section">
+                        <h4>Paiement Mobile</h4>
+                        <div class="form-group">
+                            <label>Numéro de téléphone</label>
+                            <input type="tel" id="mobileNumber" placeholder="+237 6XX XXX XXX">
+                        </div>
+                        <div class="form-group">
+                            <label>Code PIN</label>
+                            <input type="password" id="mobilePin" placeholder="****" maxlength="4">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-summary">
+                    <h4>Récapitulatif de la commande</h4>
+                    <div class="summary-content">
+                        <!-- Le récapitulatif de commande sera généré par JavaScript -->
+                    </div>
+                </div>
+                <div class="checkout-actions">
+                    <button class="cancel-btn" onclick="cancelCheckout()">Annuler</button>
+                    <button class="confirm-btn" onclick="confirmPayment()">
+                        <i class="fas fa-lock"></i>
+                        Confirmer le paiement
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- Notification -->
+    <div id="notification" class="notification">
+        <div class="notification-content">
+            <i class="notification-icon"></i>
+            <span class="notification-message"></span>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-cocktail"></i> Cameroun Drinks</h3>
+                    <p>Votre spécialiste des boissons authentiques du Cameroun</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Produits</h4>
+                    <ul>
+                        <li><a href="#products">Jus Naturels</a></li>
+                        <li><a href="#products">Bières Locales</a></li>
+                        <li><a href="#products">Boissons Traditionnelles</a></li>
+                        <li><a href="#products">Nouveautés</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    Services</h4>
+                    <ul>
+                        <li><a href="#about">Livraison</a></li>
+                        <li><a href="#contact">Support Client</a></li>
+                        <li><a href="#about">Qualité</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-map-marker-alt"></i> Douala, Cameroun nyalla kambo</p>
+                        <p><i class="fas fa-phone"></i> +237 693573815</p>
+                        <p><i class="fas fa-envelope"></i> mathiewnzeudam925@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cameroun Drinks. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+       
+
+
